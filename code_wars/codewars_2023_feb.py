@@ -1,5 +1,6 @@
 import string
 import codecs
+import math
 
 
 def convert_hash_to_array(h: dict) -> list[list]:
@@ -31,6 +32,10 @@ def rot13(message: str) -> str:
     return returned_string
 
 
+def nearest_sq(n):
+    return round(math.sqrt(n)) ** 2
+
+
 if __name__ == '__main__':
     print(
         convert_hash_to_array(
@@ -41,3 +46,9 @@ if __name__ == '__main__':
     # print(rot13('b'))
     print(rot13('Hello Everyone'))
     print(codecs.encode('rot13', 'rot13'))
+
+    s = 'apple ban'
+    print([f'{s} {len(s)}' for s in s.split()])
+
+    print('***********************************')
+    print(nearest_sq(120))
