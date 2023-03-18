@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QFormLayout, QLineEdit, QDialog, \
+from PyQt6.QtWidgets import QApplication, QFormLayout, QLineEdit, QDialog, \
     QVBoxLayout, QDialogButtonBox
 
 
@@ -17,8 +17,8 @@ class Dialog(QDialog):
         formLayout.addRow('Hobbies:', QLineEdit())
         dlgLayout.addLayout(formLayout)
         button = QDialogButtonBox()
-        button.setStandardButtons(
-            QDialogButtonBox.Cancel | QDialogButtonBox.Ok)
+        # button.setStandardButtons(
+        #     QDialogButtonBox.clear() | QDialogButtonBox.Ok)
         dlgLayout.addWidget(button)
         self.setLayout(dlgLayout)
 
@@ -27,4 +27,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     dlg = Dialog()
     dlg.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
